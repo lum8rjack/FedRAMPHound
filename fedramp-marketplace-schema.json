@@ -1,0 +1,192 @@
+{
+  "schema": {
+    "name": "FedRAMP_Marketplace",
+    "display_name": "FedRAMP Marketplace",
+    "version": "v1.0.0",
+    "namespace": "FedRAMP"
+  },
+  "node_kinds": [
+    {
+      "name": "FedRAMP_Agency",
+      "display_name": "Agency",
+      "description": "A U.S. federal agency or sub-agency from the FedRAMP Marketplace that authorizes, reuses, or is otherwise associated with cloud offerings.",
+      "is_display_kind": true,
+      "icon": "landmark",
+      "color": "#1B4F72",
+      "info": {
+        "overview": {
+          "title": "Overview",
+          "position": 1,
+          "markdown": {
+            "content": "Federal agencies and sub-agencies listed in the FedRAMP Marketplace. Parent agencies may contain sub-agencies via `FedRAMP_Contains`. Agencies authorize or reuse cloud products for government use."
+          }
+        }
+      }
+    },
+    {
+      "name": "FedRAMP_Assessor",
+      "display_name": "Assessor",
+      "description": "A FedRAMP-accredited Third-Party Assessment Organization (3PAO) that assesses cloud products.",
+      "is_display_kind": true,
+      "icon": "clipboard-check",
+      "color": "#1E8449",
+      "info": {
+        "overview": {
+          "title": "Overview",
+          "position": 1,
+          "markdown": {
+            "content": "Accredited 3PAOs that perform independent assessments of FedRAMP cloud offerings. Connected to products through `FedRAMP_Assesses`."
+          }
+        }
+      }
+    },
+    {
+      "name": "FedRAMP_Product",
+      "display_name": "Product",
+      "description": "A cloud service offering (CSO) listed on the FedRAMP Marketplace, including authorization status and impact level.",
+      "is_display_kind": true,
+      "icon": "cube",
+      "color": "#C0392B",
+      "info": {
+        "overview": {
+          "title": "Overview",
+          "position": 1,
+          "markdown": {
+            "content": "FedRAMP cloud service offerings. Products are provided by CSPs, assessed by 3PAOs, authorized or reused by agencies, and may leverage other products."
+          }
+        }
+      }
+    },
+    {
+      "name": "FedRAMP_Provider",
+      "display_name": "Provider",
+      "description": "A Cloud Service Provider (CSP) that offers one or more FedRAMP Marketplace products.",
+      "is_display_kind": true,
+      "icon": "cloud",
+      "color": "#2471A3",
+      "info": {
+        "overview": {
+          "title": "Overview",
+          "position": 1,
+          "markdown": {
+            "content": "Cloud Service Providers that publish offerings on the FedRAMP Marketplace. Linked to products through `FedRAMP_Provides`."
+          }
+        }
+      }
+    }
+  ],
+  "relationship_kinds": [
+    {
+      "name": "FedRAMP_Contains",
+      "description": "A parent agency contains a sub-agency.",
+      "is_traversable": true,
+      "info": {
+        "overview": {
+          "title": "Overview",
+          "position": 1,
+          "markdown": {
+            "content": "Represents the organizational hierarchy between a parent agency and one of its sub-agencies."
+          }
+        }
+      }
+    },
+    {
+      "name": "FedRAMP_Authorizes",
+      "description": "An agency authorizes a FedRAMP product for use.",
+      "is_traversable": true,
+      "info": {
+        "overview": {
+          "title": "Overview",
+          "position": 1,
+          "markdown": {
+            "content": "The agency is an authorizing official (or equivalent) for the product on the FedRAMP Marketplace."
+          }
+        }
+      }
+    },
+    {
+      "name": "FedRAMP_Reuses",
+      "description": "An agency reuses another agency's authorization for a FedRAMP product.",
+      "is_traversable": true,
+      "info": {
+        "overview": {
+          "title": "Overview",
+          "position": 1,
+          "markdown": {
+            "content": "The agency relies on an existing FedRAMP authorization rather than issuing its own."
+          }
+        }
+      }
+    },
+    {
+      "name": "FedRAMP_InProcess",
+      "description": "An agency has a product authorization currently in process.",
+      "is_traversable": true,
+      "info": {
+        "overview": {
+          "title": "Overview",
+          "position": 1,
+          "markdown": {
+            "content": "The agency is actively working through authorization for the product, but it is not yet complete."
+          }
+        }
+      }
+    },
+    {
+      "name": "FedRAMP_Assesses",
+      "description": "A 3PAO assesses a FedRAMP product.",
+      "is_traversable": true,
+      "info": {
+        "overview": {
+          "title": "Overview",
+          "position": 1,
+          "markdown": {
+            "content": "The assessor is the independent third-party assessment organization for the product."
+          }
+        }
+      }
+    },
+    {
+      "name": "FedRAMP_Provides",
+      "description": "A CSP provides a FedRAMP product.",
+      "is_traversable": true,
+      "info": {
+        "overview": {
+          "title": "Overview",
+          "position": 1,
+          "markdown": {
+            "content": "The cloud service provider owns or operates the marketplace product offering."
+          }
+        }
+      }
+    },
+    {
+      "name": "FedRAMP_Leverages",
+      "description": "A product leverages another FedRAMP product or underlying system.",
+      "is_traversable": true,
+      "info": {
+        "overview": {
+          "title": "Overview",
+          "position": 1,
+          "markdown": {
+            "content": "The offering depends on another FedRAMP-authorized product as part of its authorization boundary or inheritance."
+          }
+        }
+      }
+    },
+    {
+      "name": "FedRAMP_PartnersWith",
+      "description": "A product partners with an agency for authorization.",
+      "is_traversable": true,
+      "info": {
+        "overview": {
+          "title": "Overview",
+          "position": 1,
+          "markdown": {
+            "content": "The product lists a partnering agency on the FedRAMP Marketplace."
+          }
+        }
+      }
+    }
+  ]
+}
