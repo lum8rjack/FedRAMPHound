@@ -1,0 +1,5 @@
+{
+  "name": "Agencies Using a Product",
+  "query": "MATCH p = (a:FedRAMP_Agency)-[:FedRAMP_Contains*0..1]->(user:FedRAMP_Agency)-[:FedRAMP_Authorizes|FedRAMP_Reuses]->(prod:FedRAMP_Product) WHERE prod.objectid = 'CHANGE' RETURN p",
+  "description": "Show agencies that authorize or reuse a product, including parent→sub→product when a sub-agency holds the relationship. Click the product, copy its Object ID, replace CHANGE, then run."
+}

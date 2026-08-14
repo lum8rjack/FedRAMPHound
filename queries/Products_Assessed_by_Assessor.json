@@ -1,0 +1,5 @@
+{
+  "name": "Products Assessed by Assessor",
+  "query": "MATCH p = (a:FedRAMP_Assessor)-[:FedRAMP_Assesses]->(prod:FedRAMP_Product) WHERE a.objectid = 'CHANGE' RETURN p",
+  "description": "Show products assessed by a 3PAO. Click the assessor, copy its Object ID, replace CHANGE with that ID, then run."
+}

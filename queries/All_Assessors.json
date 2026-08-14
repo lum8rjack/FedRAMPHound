@@ -1,0 +1,5 @@
+{
+  "name": "All Assessors",
+  "query": "MATCH (a:FedRAMP_Assessor) RETURN a ORDER BY coalesce(a.products_assessing, 0) DESC",
+  "description": "Show all 3PAO assessor nodes, ordered by products_assessing when available."
+}

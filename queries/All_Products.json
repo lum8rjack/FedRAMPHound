@@ -1,0 +1,5 @@
+{
+  "name": "All Products",
+  "query": "MATCH (prod:FedRAMP_Product) RETURN prod ORDER BY prod.displayname",
+  "description": "Show all FedRAMP product nodes."
+}

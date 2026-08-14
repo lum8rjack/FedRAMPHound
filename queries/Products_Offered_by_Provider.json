@@ -1,0 +1,5 @@
+{
+  "name": "Products Offered by Provider",
+  "query": "MATCH p = (csp:FedRAMP_Provider)-[:FedRAMP_Provides]->(prod:FedRAMP_Product) WHERE csp.objectid = 'CHANGE' RETURN p",
+  "description": "Show products offered by a CSP. Click the provider, copy its Object ID, replace CHANGE with that ID, then run."
+}
